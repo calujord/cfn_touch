@@ -36,7 +36,7 @@ var app = angular.module('CfnApp', ["ui.bootstrap"])
                 url : "/guardar.json",
                 params: $scope.datos,
             }).then(function mySuccess(response) {
-                $scope.go(5);
+                $scope.go(4);
             }, function myError(response) {
                 console.log(response);
                 $scope.myWelcome = response.statusText;
