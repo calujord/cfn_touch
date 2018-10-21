@@ -1,0 +1,14 @@
+
+<div class="modal-header">
+
+    <h5 class="modal-title" id="exampleModalLabel">Imprimir PDF</h5>
+</div>
+<div class="modal-body">
+    <object id="pdfDoc" style="width: 100%; height: 500px;" name="pdfDoc">
+        <object data="{{ url_pdf }}#toolbar=1&navpanes=1&scrollbar=1" type="application/pdf" id="pdf" width="560px" height="780px"><iframe ng-src="{{ url_pdf }}"></iframe></object>
+    </object>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()" data-dismiss="modal">Cerrar</button>
+    <button type="button" class="btn btn-default" ng-click="print_hola(url_pdf, url_page)" data-dismiss="modal">Close</button>
+</div>

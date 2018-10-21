@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CFN</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+    <script src="{% static "js/index.js" %}"></script>
+
+</head>
+<body>
+
+        <div class="page" ng-app="CfnApp" ng-controller="PageCtrl">
+            
+        <a ng-click="go(page+1)">avanzar</a>
+        {% verbatim %}
+        <div class="pagina-body" id="pagina1" ng-if="page==1">
+            <a ng-click="go(2)" id="siguiente">
+
+            </a>
+        </div>
+        <div class="pagina-body" id="pagina2" ng-if="page==2">
+            <form ng-submit="guardar()" method="get">
+                <input required type="text" name="ruc" ng-model="datos.ruc" placeholder="No. Identificación (RUC o CI)" />
+                <input required type="text" name="nombres" ng-model="datos.nombres" placeholder="Nombres y Apellidos / Razón Social" />
+                <input required type="number" name="telefono" ng-model="datos.telefono" placeholder="Telefono fijo" />
+                <input required type="number" name="telefono_movil" ng-model="datos.movil" placeholder="Telefono movil" />
+                <input required type="email" name="correo" ng-model="datos.correo" placeholder="Correo" />
+                <select required name="tipo" ng-model="datos.tipo">
+                    <option value="">Tipo personería</option>
+                    <option value="Persona Natural">Persona Natural</option>
+                    <option value="Persona Jurídica">Persona Jurídica</option>
+                </select>
+                <button id="finalizar-form" type="submit"></button>
+            </form>
+        </div>
+        <div class="pagina-body" id="pagina3" ng-if="page==3">
+            <a ng-click="go(4)" id="menu"></a>
+
+        </div>
+        <div class="pagina-body" id="pagina4" ng-if="page==4">
+            <a ng-click="go(3)" class="float" id="home-4">&nbsp;</a>
+            <a ng-click="go(5)" class="float" id="link1">&nbsp;</a>
+            <a ng-click="go(6)" class="float" id="link2">&nbsp;</a>
+            <a ng-click="go(7)" class="float" id="link3">&nbsp;</a>
+            <a ng-click="go(8)" class="float" id="link4">&nbsp;</a>
+            <a ng-click="go(9)" class="float" id="link5">&nbsp;</a>
+            <a ng-click="go(10)" class="float" id="link6">&nbsp;</a>
+        </div>
+        <div class="pagina-body" id="pagina5" ng-if="page==5">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/directo.pdf')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        <div class="pagina-body" id="pagina6" ng-if="page==6">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/apoyo-productivo.pdf')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        <div class="pagina-body" id="pagina7" ng-if="page==7">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/apoyo-productivo')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        <div class="pagina-body" id="pagina8" ng-if="page==8">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/internacional.pdf')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        <div class="pagina-body" id="pagina9" ng-if="page==9">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/apoyo.pdf')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        <div class="pagina-body" id="pagina10" ng-if="page==10">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/fondo.pdf')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        <div class="pagina-body" id="pagina11" ng-if="page==11">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/fondo.pdf')" class="float contenido-imprimir">&nbsp;</a>
+        </div>
+        <div class="pagina-body" id="pagina12" ng-if="page==12">
+            <a ng-click="go(page-1)" class="float contenido-atras">&nbsp;</a>
+            <a ng-click="go(page+1)" class="float contenido-siguiente">&nbsp;</a>
+            <a ng-click="mostrar('/static/pdf/nofinanciero.pdf')" class="float contenido-imprimir">&nbsp;</a>
+
+        </div>
+        {% endverbatim %}
+    </div>
+</body>
+</html>
