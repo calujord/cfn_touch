@@ -25,8 +25,8 @@ SECRET_KEY = '4e8pa1vykdd3&5i6727q)737my*w4#c*66zr=i(9puyq^!nf^&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
+BASE_URL = "http://cfn.anubisoft.co"
 
 # Application definition
 
@@ -119,4 +119,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'cfn_touch/static/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'cfn_touch/media/')
+if DEBUG:
+    STATIC_URL  = '/static/'
+    MEDIA_URL   = '/media/'
+    MEDIA_PATH  = os.path.join(BASE_DIR, 'cfn_touch/media')
+    STATIC_PATH = os.path.join(BASE_DIR, 'cfn_touch/media')
+
+
+
+else:
+    STATIC_URL = '%s/static/' % BASE_URL
+    MEDIA_URL = '%s/media/' % BASE_URL
