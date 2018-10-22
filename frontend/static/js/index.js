@@ -37,7 +37,7 @@ var app = angular.module('CfnApp', ["ui.bootstrap"])
                 params: $scope.datos,
             }).then(function mySuccess(response) {
                 $scope.datos = {};
-                $scope.go(4);
+                $scope.go(3);
             }, function myError(response) {
                 console.log(response);
                 $scope.myWelcome = response.statusText;

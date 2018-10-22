@@ -17,7 +17,7 @@
 </head>
 <body>
 
-        <div class="page" ng-app="CfnApp" ng-controller="PageCtrl" ng-init="page=4">
+        <div class="page" ng-app="CfnApp" ng-controller="PageCtrl">
             
         {% verbatim %}
         <div class="pagina-body" id="pagina1" ng-if="page==1">
@@ -41,7 +41,7 @@
             </form>
         </div>
         <div class="pagina-body" id="pagina3" ng-if="page==3">
-            <a ng-click="go(2)" id="menu"></a>
+            <a ng-click="go(4)" id="menu"></a>
 
         </div>
         <div class="pagina-body" id="pagina4" ng-if="page==4">
