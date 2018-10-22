@@ -154,3 +154,11 @@ form{
     left: 10%;
     top: 32%;
 }
+.home-menu {
+    /* border: 4px solid yellow; */
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    left: 1421px;
+    bottom: 140px;
+}
