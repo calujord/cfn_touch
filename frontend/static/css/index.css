@@ -25,11 +25,11 @@ body{
 #pagina5{background-image: url("/static/images/pg4-2.png");}
 #pagina6{background-image: url("/static/images/pg4-3.png");}
 #pagina7{background-image: url("/static/images/pg4-4.png");}
-#pagina8{background-image: url("/static/images/pg4-5.png");}
-#pagina9{background-image: url("/static/images/pg4-6.png");}
-#pagina10{background-image: url("/static/images/pg4-7.png");}
+#pagina12{background-image: url("/static/images/pg4-5.png");}
+#pagina8{background-image: url("/static/images/pg4-6.png");}
+#pagina9{background-image: url("/static/images/pg4-7.png");}
 #pagina11{background-image: url("/static/images/pg4-8.png");}
-#pagina12{background-image: url("/static/images/mesa.png");}
+#pagina10{background-image: url("/static/images/mesa.png");}
 
 #siguiente {
     width: 139px;
@@ -43,11 +43,12 @@ body{
     width: 310px;
     height: 77px;
     display: block;
-    /* background-color: red; */
+    background-color: transparent;
     margin-left: 12%;
     margin-top: 12%;
     position: relative;
     /* border: 11px solid blue; */
+    border: 0px;
 }
 #menu{
     width: 121px;
