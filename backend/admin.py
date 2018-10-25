@@ -5,6 +5,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django.http import HttpResponse
+from django.utils.encoding import smart_str
 from backend.models import Contacto
 import csv
 
@@ -25,6 +26,6 @@ class ContactoAdmin(admin.ModelAdmin):
 
         writer.writerow(field_names)
         for obj in queryset:
-            row = writer.writerow([getattr(obj, field) for field in field_names])
+            row = writer.writerow([smart_str(getattr(obj, field)) for field in field_names])
         return response
 admin.site.register(Contacto, ContactoAdmin)
